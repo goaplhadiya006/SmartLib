@@ -26,18 +26,7 @@ SmartLib is a production-level, responsive full-stack **Online Library Managemen
 - **Manage Users**: User accounts overview with role toggling (`user` <-> `admin`), active loan count, and account deletion.
 - **Manage Borrowings & Returns Desk**: Track all member loans, issue return confirmations, and manage check-ins.
 - **Overdue Books & Delinquencies**: Automated overdue tracking with direct email reminder links to members.
-- **Reports & Analytics**: Printable executive library audit report.
-
----
-
-## 🔑 Default Credentials (Max 8 Char Passwords)
-
-| Role | Email | Password |
-| :--- | :--- | :--- |
-| **System Admin** | `admin@library.com` | `Admin123` |
-| **Sample User 1** | `john@example.com` | `User1234` |
-| **Sample User 2** | `jane@example.com` | `User1234` |
-| **Sample User 3** | `alex@example.com` | `User1234` |
+- **Reports & Analytics**: Printable executive library audit report.` 
 
 ---
 
