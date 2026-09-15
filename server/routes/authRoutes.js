@@ -7,8 +7,16 @@ const {
   getUserProfile,
   updateUserProfile,
 } = require('../controllers/authController');
+
 const { protect } = require('../middleware/authMiddleware');
 const upload = require('../middleware/uploadMiddleware');
+router.get('/test', (req, res) => {
+  res.json({
+    status: 'ok',
+    message: 'authRoutes router is working'
+  });
+});
+
 
 router.post('/register', registerUser);
 router.post('/login', loginUser);
