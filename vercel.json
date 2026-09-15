@@ -1,5 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "cd client && npm install --include=dev && npm run build",
-  "outputDirectory": "client/dist"
+  "outputDirectory": "client/dist",
+  "functions": {
+    "api/[...path].js": {
+      "includeFiles": [
+        "server/**"
+      ]
+    }
+  }
 }
