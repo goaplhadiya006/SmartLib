@@ -4,9 +4,7 @@
   "outputDirectory": "client/dist",
   "functions": {
     "api/[...path].js": {
-      "includeFiles": [
-        "server/**"
-      ]
+      "includeFiles": "server/**"
     }
   }
 }
