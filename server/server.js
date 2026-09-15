@@ -31,10 +31,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Health Check Route
 app.get('/api/health', (req, res) => {
-res.json({
-status: 'ok',
-message: 'Online Library Management API is running smoothly'
-});
+  res.json({
+    status: 'ok',
+    message: 'Online Library Management API is running smoothly'
+  });
 });
 
 // API Routes
@@ -49,22 +49,14 @@ app.use('/api/feedback', feedbackRoutes);
 // Error Handling Middleware
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
+// Local development server
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-console.log(
-`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`
-);
-
-// Automatically open frontend in Google Chrome
-const { exec } = require('child_process');
-
-const frontendUrl = 'http://localhost:3000';
-if (process.platform === 'win32') {
-exec(`start chrome "${frontendUrl}"`);
-} else if (process.platform === 'darwin') {
-exec(`open -a "Google Chrome" "${frontendUrl}"`);
-} else {
-exec(`google-chrome "${frontendUrl}"`);
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
 }
-});
+
+// Export app for Vercel
+module.exports = app;
