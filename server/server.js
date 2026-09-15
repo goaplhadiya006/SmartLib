@@ -58,7 +58,12 @@ app.post('/api/debug-route', (req, res) => {
     method: req.method
   });
 });
-
+app.get('/api/auth-test', (req, res) => {
+  res.json({
+    status: 'ok',
+    message: 'Auth area is reachable on Vercel'
+  });
+});
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
