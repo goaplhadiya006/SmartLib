@@ -37,6 +37,17 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+app.get('/api/debug-route', (req, res) => {
+  res.json({
+    status: 'ok',
+    message: 'Debug route is working',
+    url: req.url,
+    originalUrl: req.originalUrl,
+    path: req.path,
+    method: req.method
+  });
+});
+
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
