@@ -47,6 +47,17 @@ app.get('/api/debug-route', (req, res) => {
     method: req.method
   });
 });
+app.post('/api/debug-route', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'POST debug route is working',
+    body: req.body,
+    url: req.url,
+    originalUrl: req.originalUrl,
+    path: req.path,
+    method: req.method
+  });
+});
 
 // API Routes
 app.use('/api/auth', authRoutes);
